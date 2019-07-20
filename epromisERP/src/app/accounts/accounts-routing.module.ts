@@ -6,11 +6,17 @@ import { from } from 'rxjs';
 import { ReceivableMasterComponent } from './receivable-master/receivable-master.component';
 import { AccountsModule } from './accounts.module';
 import { AccountsComponent } from './accounts/accounts.component';
+import { HomeComponent } from '../home/home.component';
 
 const routes: Routes = [
   {
   path: '',
+  component:HomeComponent,
   children: [
+    {
+      path:'accounts',
+      component:AccountsComponent
+    },
     {
       path: 'payable-master',
       component: PayableMasterComponent,

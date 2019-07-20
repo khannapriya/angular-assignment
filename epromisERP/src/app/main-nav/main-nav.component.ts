@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
@@ -14,7 +15,12 @@ export class MainNavComponent {
     .pipe(
       map(result => result.matches)
     );
+  // router: any;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver,private router : Router) {}
 
+  logout(){
+    console.log("bvcvcdhb");
+    this.router.navigate(["/login"]);
+  }
 }

@@ -32,7 +32,7 @@
         ><i class="material-icons"> account_balance </i
         ><span>Transaction</span></a
       >
-      <a mat-list-item routerLink="/payable-master">
+      <a mat-list-item routerLink="/accounts">
         <i class="material-icons"> attach_money </i> Accounts</a
       >
       <a mat-list-item routerLink="/payable-master">
@@ -93,6 +93,7 @@
         <ul class="nav-right">
           <li class="onhover-dropdown">
             <div class="media align-items-center">
+                <button mat-icon-button [matMenuTriggerFor]="logout">
               <img
                 class="align-self-center pull-right img-50 rounded-circle"
                 src="../../assets/images/user.png"
@@ -104,6 +105,12 @@
                 <span class="animate-circle"></span>
                 <!-- <span class="main-circle"></span> -->
               </div>
+              </button>
+              <mat-menu #logout>
+                  <button mat-menu-item (Click)="logout()">
+                      <i class="material-icons">  arrow_right_alt    </i> Logout
+                  </button>
+                  </mat-menu>
             </div>
           </li>
           <li class="onhover-dropdown">

@@ -10,11 +10,11 @@ import { TransactionModule } from './transaction/transaction.module';
 import { TransactionListComponent } from './transaction/transaction-list/transaction-list.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: "/login",
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '',
+  //   redirectTo: "/login",
+  //   pathMatch: 'full'
+  // },
   { path: 'login', component: LoginComponent },
   {
     path:'accounts',
@@ -32,8 +32,8 @@ const routes: Routes = [
     children:[
       {
         path:'',
-        // component:TransactionListComponent,
-        loadChildren:'./transaction/transaction.module#TransactionModule'
+        component:TransactionListComponent,
+        // loadChildren:'./transaction/transaction.module#TransactionModule'
       }
     ]
  },
