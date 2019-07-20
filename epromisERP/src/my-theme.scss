@@ -1,0 +1,30 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$my-theme-primary:mat-palette($mat-white);
+$my-theme-accent:  mat-palette($mat-black, A200, A100, A400);
+
+$my-theme-warn:  mat-palette($mat-red);
+$theme: mat-dark-theme-foreground($my-theme-primary, $my-theme-accent,$my-theme-warn);
+
+@include angular-material-theme($theme);
+
+
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background-color: transparent;
+    opacity: 0;
+}
+
+
+
+.mat-form-field-underline {
+    background-color: $my-theme-accent;
+  }
+  .mat-form-field-ripple {
+    background-color: $accent;
+  }
+  .placeholder {
+    display: none;
+  }

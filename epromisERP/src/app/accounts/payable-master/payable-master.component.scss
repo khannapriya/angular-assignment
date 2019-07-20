@@ -1,0 +1,124 @@
+.example-tree-invisible {
+  display: none;
+  padding-right: 15px;
+  
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+//mat card
+section{
+  display: flex;
+  mat-card{
+    &.list-card{
+      height: max-content;
+    }
+    &.form-card{
+        flex: 1  1 calc(30% - 30px);
+        max-height: fit-content;
+    }
+}
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 0 15px;
+    border-radius: 5px;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .example-container {
+    overflow-x: scroll;
+  }
+ //map
+ agm-map {
+  height: 300px;
+}
+.mat-card.map{
+  flex: 1;
+}
+.nav-section ul{display: flex;
+  padding: 0;
+  li{
+    a{
+      line-height: 1;
+      span{
+        line-height: 40px;
+        font-size: 14px;
+        color: #000033;
+        font-family: "Poppins";
+        font-weight: 600;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0 5px;
+        cursor: pointer;
+        i.material-icons {
+          padding:0 10px;
+          // margin:5px;
+          font-size: 36px;
+          color: #000033; 
+        }
+        &.material-icons {
+          width:auto;  
+        }
+      }
+      img.img-span {
+        margin: 2px;
+    }
+    }
+  }
+    
+}
+@media(max-width:599px){
+      
+        section.section-card{
+          display: block;
+          width: 100%;
+      }
+      mat-card.mat-card {
+          display: flex;
+      }
+      section mat-card.form-card{
+        flex: 1;
+        flex-direction: column;
+      }
+      .section-button{
+        flex-direction: column;
+        button{
+          margin: 15px;
+        }
+      }
+      .mat-form-field {
+        display: block;
+      }
+}
+@media(max-width:1199px){
+      
+  section.section-card{
+    display: block;
+    width: 100%;
+}
+mat-card.mat-card {
+    display: flex;
+}
+section mat-card.form-card{
+  flex: 1;
+  flex-direction: column;
+}
+.section-button{
+  flex-direction: column;
+  button{
+    margin: 15px auto;
+  }
+}
+}

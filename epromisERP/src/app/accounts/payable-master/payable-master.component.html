@@ -1,0 +1,459 @@
+<div class="nav-section">
+  <ul class="flex">
+    <li>
+      <a ><span class="material-icons "> <img src="../../../assets/images/prev.png" class="img-span"> Prev </span></a>
+    </li>
+    <li>
+        <a ><span class="material-icons "> <img src="../../../assets/images/next.png"  class="img-span"> Next </span></a>
+      </li>
+      <li>
+          <a ><span><i class="material-icons"> insert_drive_file </i> New</span></a>
+        </li>
+        <li>
+            <a ><span><i class="material-icons">save </i> Save</span></a>
+          </li>
+          <li>
+              <a ><span class="material-icons "> <img src="../../../assets/images/browse.png"  class="img-span"> Browse</span></a>
+            </li>
+            <li>
+                <a ><span><i class="material-icons"> delete </i> Delete</span></a>
+              </li>
+              <li>
+                  <a ><span><i class="material-icons"> print </i> Print</span></a>
+                </li>
+                <li>
+                    <a ><span><i class="material-icons"> attach_file </i>
+                    attach </span></a>
+                  </li>
+  </ul>
+</div>
+
+<h2>Payable Master</h2>
+<mat-tab-group>
+  <mat-tab label="Group" class="mat-raised-button mat-primary">
+    <section class="section-card">
+    <mat-card class="list-card">
+      <mat-card-content>
+        <mat-tree
+          [dataSource]="dataSource"
+          [treeControl]="treeControl"
+          class="example-tree"
+        >
+          <!-- This is the tree node template for leaf nodes -->
+          <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+            <li class="mat-tree-node">
+              <!-- use a disabled button to provide padding for tree leaf -->
+              <button mat-icon-button disabled></button>
+              {{ node.name }}
+            </li>
+          </mat-tree-node>
+          <!-- This is the tree node template for expandable nodes -->
+          <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+            <li>
+              <div class="mat-tree-node">
+                <button
+                  mat-icon-button
+                  matTreeNodeToggle
+                  [attr.aria-label]="'toggle ' + node.name"
+                >
+                  <mat-icon class="mat-icon-rtl-mirror">
+                    {{
+                      treeControl.isExpanded(node)
+                        ? "expand_more"
+                        : "chevron_right"
+                    }}
+                  </mat-icon>
+                </button>
+                {{ node.name }}
+              </div>
+              <ul
+                [class.example-tree-invisible]="!treeControl.isExpanded(node)"
+              >
+                <ng-container matTreeNodeOutlet></ng-container>
+              </ul>
+            </li>
+          </mat-nested-tree-node>
+        </mat-tree>
+      </mat-card-content>
+    </mat-card>
+    <span></span>
+    <div class="right-section">
+    <mat-card class="form-card">
+      <div class="container">
+        <form [formGroup]="payableForm">
+          <mat-form-field>
+            <input
+              placeholder="Account Code"
+              formControlName="accountCode"
+              required
+              matInput
+              value="12366545487"
+            />
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+              formControlName="dCurreny"
+              required
+              placeholder="Default Currency"
+              matInput
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="dCurrenyVal"
+              required
+              placeholder="Currency Value"
+              matInput
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="accountName"
+              required
+              placeholder="Account Name"
+              matInput
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="arabicName"
+              required
+              placeholder="Arabic Name"
+              matInput
+            />
+          </mat-form-field>
+          <br />
+          <section layout-padding class="section-button">
+            <button mat-button>Category</button>
+            <button
+              mat-button
+              mat-raised-button
+              mat-primary
+              class="mat-primary"
+              type="submit"
+              id="submit"
+              value="Submit"
+            >
+              Accounts Receivable
+            </button>
+            <button
+              mat-button
+              mat-raised-button
+              data-dismiss="modal"
+              type="button"
+            >
+              Other Payables
+            </button>
+          </section>
+        </form>
+      </div>
+      <div class="container">
+        <form [formGroup]="payableForm2">
+          <mat-form-field>
+            <input
+              placeholder="Address"
+              formControlName="address"
+              required
+              matInput
+              value="At the top Burj Khalifa "
+            />
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+              formControlName="sAddress"
+              required
+              placeholder="Ship To Address"
+              matInput
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="VAT_no"
+              required
+              placeholder="VAT No"
+              matInput
+              value="AE12365478987"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="VAT_applicable"
+              required
+              placeholder="VAT_applicable"
+              matInput
+              value="Applicable"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              formControlName="region"
+              required
+              placeholder="Local"
+              matInput
+            />
+          </mat-form-field>
+          <br />
+        </form>
+      </div>
+    </mat-card>
+    <div class="example-container mat-elevation-z8">
+      
+      <table mat-table [dataSource]="dataSource1" class="table">
+      
+          <!-- DocumentName Column -->
+          <ng-container matColumnDef="DocumentName">
+            <th mat-header-cell *matHeaderCellDef> DocumentName </th>
+            <td mat-cell *matCellDef="let element"> {{element.DocumentName}} </td>
+          </ng-container>
+      
+          <!-- Description Column -->
+          <ng-container matColumnDef="Description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
+          </ng-container>
+      
+          <!-- Document Column -->
+          <ng-container matColumnDef="Document">
+            <th mat-header-cell *matHeaderCellDef> Document# </th>
+            <td mat-cell *matCellDef="let element"> {{element.Document}} </td>
+          </ng-container>
+      
+          <!-- IssueDate Column -->
+          <ng-container matColumnDef="IssueDate">
+            <th mat-header-cell *matHeaderCellDef> IssueDate </th>
+            <td mat-cell *matCellDef="let element"> {{element.IssueDate}} </td>
+          </ng-container>
+          
+          <!-- ExpiryDate Column -->
+          <ng-container matColumnDef="ExpiryDate">
+              <th mat-header-cell *matHeaderCellDef> ExpiryDate </th>
+              <td mat-cell *matCellDef="let element"> {{element.ExpiryDate}} </td>
+            </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+  </div>
+    </section>
+    
+  </mat-tab>
+
+  /*Debitors Control A/c*/
+  <mat-tab label="Debitors Control A/c" class="mat-raised-button mat-primary">
+    <mat-card class="form-card">
+      <div class="container">
+        <button
+          mat-raised-button
+          (click)="isLinear = !isLinear"
+          id="toggle-linear"
+        >
+          {{ !isLinear ? "Enable linear mode" : "Disable linear mode" }}
+        </button>
+        <mat-vertical-stepper [linear]="isLinear" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Fill out your name</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Last name, First name"
+                  formControlName="firstCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Fill out your address</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Address"
+                  formControlName="secondCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+      </div>
+    </mat-card>
+  </mat-tab>
+  /*Mail Send History */
+  <mat-tab label="Mail Send History" class="mat-raised-button mat-primary">
+    <mat-card class="form-card">
+      <div class="container">
+        <mat-horizontal-stepper labelPosition="bottom" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Fill out your name</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Last name, First name"
+                  formControlName="firstCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button
+                  mat-button
+                  mat-raised-button
+                  mat-primary
+                  class="mat-primary"
+                  matStepperNext
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" optional>
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Fill out your address</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Address"
+                  formControlName="secondCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button
+                  mat-button
+                  mat-raised-button
+                  mat-primary
+                  class="mat-primary"
+                  matStepperNext
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button
+                mat-button
+                mat-raised-button
+                mat-primary
+                class="mat-primary"
+                (click)="stepper.reset()"
+              >
+                Reset
+              </button>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </div>
+    </mat-card>
+  </mat-tab>
+
+  /*call from crm*/
+  <mat-tab label="Call from CRM" class="mat-raised-button mat-primary">
+    <mat-card class="form-card">
+      <div class="container">
+        <mat-horizontal-stepper labelPosition="bottom" #stepper>
+          <mat-step [stepControl]="userFormGroup">
+            <form [formGroup]="userFormGroup">
+              <ng-template matStepLabel>Fill out your name</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Full name"
+                  formControlName="fullNameCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button
+                  mat-button
+                  mat-raised-button
+                  mat-primary
+                  class="mat-primary"
+                  matStepperNext
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="numberFormGroup" optional>
+            <form [formGroup]="numberFormGroup">
+              <ng-template matStepLabel>Mobile Number</ng-template>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Mobile "
+                  formControlName="numberCtrl"
+                  required
+                />
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button
+                  mat-button
+                  mat-raised-button
+                  mat-primary
+                  class="mat-primary"
+                  matStepperNext
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button
+                mat-button
+                mat-raised-button
+                mat-primary
+                class="mat-primary"
+                (click)="stepper.reset()"
+              >
+                Reset
+              </button>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </div>
+    </mat-card>
+  </mat-tab>
+  /* Map*/
+  <mat-tab label="Call from CRM" class="mat-raised-button mat-primary">
+    <mat-card class="map">
+      <h2>{{title}}</h2>
+      <agm-map [latitude]="lat" [longitude]="lng">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>

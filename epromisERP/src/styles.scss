@@ -1,0 +1,219 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+$color-primary:#fff;
+$bg-secondary:#000000;
+$bg-container:#f8f4f4;
+$font-color:#282c37;
+$font-li:#161414;
+$font-light:grey;
+$bg-btn-primary:#0291e0;
+
+
+html,body{height: 100%;}
+
+body{
+    margin: 0;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    // color:$font-color;
+    background: rgba(246,246,246,0.6);
+
+  }
+
+
+.mat-menu-panel{
+    background: $color-primary;
+    .mat-menu-item{
+        color: $font-li;
+        }
+   }
+   :disabled {
+    background-color: lighten($color: grey, $amount: 20%);
+    color: grey;
+    border: 1px solid grey;
+
+}
+
+:disabled:hover {
+    cursor: not-allowed;
+}
+
+.mat-tab-label,.mat-tab-body-content{
+    color: $font-color;
+}
+.mat-tab-body {
+    margin-left: -12.5px;
+    .mat-tab-body-content{
+        display: flex;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        height: auto;
+    }
+}
+h1,h2,h3,h4,h5,h6{
+    color: $bg-secondary;
+}
+.mat-tab-labels{
+    margin-left: -7.5px;
+    .mat-tab-label{
+        color:$color-primary;
+        background: $bg-secondary;
+        font-weight: bold;
+        font-size: 14px;
+        min-width: 100px;
+        height: 50px;
+        border-radius: 10px;
+        margin: 7.5px;
+        opacity: 1;
+        padding: 10px 15px;
+        &.mat-tab-label-active{
+            
+        background-color:$bg-btn-primary;
+        color: $color-primary;
+        }
+        // background: #0291e0;
+    }
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{background: none;}
+.mat-datepicker-popup{
+    left:15%!important;
+    top:15%!important;    
+}
+.mat-datepicker-content{
+    background: $bg-secondary;
+}
+.mat-tooltip {
+    // color:$bg-secondary !important;
+    background:$bg-secondary;
+    // margin-top:-10px;
+  }
+  
+  .mat-tab-header-pagination-chevron {
+    border-color: #000;
+}
+.mat-datepicker-toggle .mat-icon-button{color: $bg-secondary;    background: transparent;}
+//Mat-card
+
+.mat-card{
+    color: $font-color;
+    margin:15px;
+    background: $color-primary;
+    text-transform: capitalize;
+    flex: 0 1 calc(30% - 30px);
+    // box-shadow:0 0 7px #c8c0c8;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.14);
+    background-color: #ffffff;
+    .mat-card-image{margin-bottom: 0;}
+    .mat-card-title{
+        color: $font-color;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+}
+.mat-tree{
+    background: $color-primary;
+    
+    .mat-nested-tree-node, .mat-tree-node{
+        color: $bg-secondary;
+      button{
+        color: $bg-secondary !important;
+        background: transparent !important;
+        &:nth-child(1){
+            border: 0;
+        }
+    }
+    li.mat-tree-node:before{
+        // content: '>';
+        font-size: 16px;
+        font-weight: 600;
+    }
+      
+    }
+}
+//  form field
+ .mat-form-field .mat-form-field-label {
+    color: #000 !important;
+}
+//mat-button design 
+
+//Mat stepper 
+.mat-stepper-horizontal, .mat-stepper-vertical {
+    background-color:rgba(246,246,246,0.6);
+    .mat-step-header .mat-step-icon.mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit{
+        background-color: $bg-btn-primary !important;
+        color: $color-primary !important;
+    }
+    
+    .mat-step-header .mat-step-icon {
+        background-color: rgba(0,0,0,0.2);
+        color: #000;
+    }
+    .mat-step-header .mat-step-label, .mat-step-header .mat-step-optional{
+        color: $bg-secondary;
+    }
+}
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary
+{
+    background-color: $bg-btn-primary;
+    margin:0 15px;
+    
+}
+
+.mat-table.table {
+    background:$color-primary;
+    thead, th , tr,td{
+        color: $font-color;
+        font-size: 16px;
+        // font-family: "Poppins";
+        font-weight: 600;
+        }
+    }
+    mat-card.form-card.mat-card.ng-star-inserted {
+        flex: 1;
+    }
+@media(max-width:599px){
+    .mat-tab-body .mat-tab-body-content{
+        flex-direction: column;
+    }
+    
+    .mat-icon-button{
+        max-width: 25px!important;
+        max-height: 25px!important;
+        line-height: 1 !important;
+        font-size: 20px;
+    }
+    
+    .mat-tab-label {
+        height: 40px!important;
+        min-width: 50px !important;
+        flex: 1 !important;
+        font-size: 12px!important;
+    }
+    
+    .mat-tab-labels .mat-tab-label{
+        padding: 10px 25px;
+      }
+}
+.mat-form-field{
+    margin:15px;
+    .mat-form-field-wrapper{
+        
+        .mat-form-field-underline {
+            background-color:$bg-btn-primary;
+        }
+        .mat-form-field-ripple {
+            background-color: inherit;
+        }
+    }
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label, .mat-form-field-appearance-legacy .mat-hint {
+    color: $bg-btn-primary !important;
+}
+.mat-table.table thead, .mat-table.table th, .mat-table.table tr, .mat-table.table td{
+    padding: 15px 25px;
+}

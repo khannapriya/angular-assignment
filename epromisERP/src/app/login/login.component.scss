@@ -1,0 +1,15 @@
+mat-card{
+    width: 50%;
+    margin:10% auto;
+    display: flex;
+    flex-direction: column;
+    // height: auto;
+    justify-content: center;
+    align-content: center;
+    padding: 15px;
+    form{
+        flex-direction: column;
+        display: flex;
+       
+    }
+}
