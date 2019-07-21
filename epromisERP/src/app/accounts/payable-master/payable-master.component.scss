@@ -119,6 +119,9 @@ section{
               }
               &.material-icons {
                 width:auto;  
+                &.arrow{
+                  margin-top:-3px !important ;
+                }
               }
             }
             img.img-span {
