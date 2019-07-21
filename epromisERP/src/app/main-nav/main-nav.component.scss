@@ -62,9 +62,9 @@ $font-color:rgb(22, 20, 20);
             }
     }
     .dotted-animation {
-      position: relative;
-      right: -3px;
-      top: -7px;
+      position: absolute;
+      right: -13px;
+      top: -11px;
       .animate-circle {
         position: absolute;
         top: 10px;
@@ -246,6 +246,10 @@ height: fit-content;
       line-height: 1 !important;
       font-size: 20px;
     }
+  }
+  .sidenav-content{
+    padding: 0 7.5px;
+    width: inherit;
   }
 }
 

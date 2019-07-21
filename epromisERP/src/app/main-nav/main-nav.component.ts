@@ -19,8 +19,4 @@ export class MainNavComponent {
 
   constructor(private breakpointObserver: BreakpointObserver,private router : Router) {}
 
-  logout(){
-    console.log("bvcvcdhb");
-    this.router.navigate(["/login"]);
-  }
 }

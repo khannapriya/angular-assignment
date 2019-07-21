@@ -61,6 +61,10 @@ section{
         flex-direction: column;
         padding: 0;
         margin: 0 5px;
+        &.span-browse{
+          width: 40px;
+          margin-top: 4px !important;
+        }
         cursor: pointer;
         i.material-icons {
           padding:0 10px;
@@ -69,11 +73,12 @@ section{
           color: #000033; 
         }
         &.material-icons {
-          width:auto;  
+          width:40px;  
+          margin-top: -5px;
         }
       }
       img.img-span {
-        margin: 2px;
+        margin:4px 2px;
     }
     }
   }
@@ -101,6 +106,44 @@ section{
       .mat-form-field {
         display: block;
       }
+      .nav-section ul{       padding: 0;
+        li{
+          a{
+            span{
+              line-height: 1;
+              font-size: 12px;
+              margin: 0 5px;
+              i.material-icons {
+                padding:0 5px;
+                font-size: 25px;
+              }
+              &.material-icons {
+                width:auto;  
+              }
+            }
+            img.img-span {
+             width: 20px;
+          }
+          }
+        }
+      }
+      h2{
+        padding: 0 7.5px;
+      }
+      
+      .nav-section{
+        ul{
+          li{
+            a{
+              .span-browse{
+                img.img-span{
+        width: 25px;         margin: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
 }
 @media(max-width:1199px){
       
@@ -119,6 +162,25 @@ section mat-card.form-card{
   flex-direction: column;
   button{
     margin: 15px auto;
+  }
+}
+}
+@media(max-width:374px){
+  
+.nav-section{
+  ul{
+    li{
+      a{
+        .span-browse{
+          img.img-span{
+          width: 20px;                  }
+        }
+        span{
+          margin:2px !important;
+          font-size: 12px;
+        }
+      }
+    }
   }
 }
 }
