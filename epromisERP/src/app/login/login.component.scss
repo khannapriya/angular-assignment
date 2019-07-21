@@ -1,5 +1,5 @@
 mat-card{
-    width: 50%;
+    width: 40%;
     margin:10% auto;
     display: flex;
     flex-direction: column;
@@ -11,5 +11,11 @@ mat-card{
         flex-direction: column;
         display: flex;
        
+    }
+}
+@media(max-width:599px){
+    mat-card{
+        width: 70%;
+
     }
 }
